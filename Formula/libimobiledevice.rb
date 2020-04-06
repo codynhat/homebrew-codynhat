@@ -2,12 +2,15 @@ class Libimobiledevice < Formula
     desc "Library to communicate with iOS devices natively"
     homepage "https://www.libimobiledevice.org/"
     revision 1
-  
-    url "https://github.com/codynhat/libimobiledevice.git"
-    depends_on "autoconf" => :build
-    depends_on "automake" => :build
-    depends_on "libtool" => :build
-    depends_on "libxml2"
+    version "1.3.0"
+    
+    stable do
+        url "https://github.com/codynhat/libimobiledevice.git"
+        depends_on "autoconf" => :build
+        depends_on "automake" => :build
+        depends_on "libtool" => :build
+        uses_from_macos "libxml2"
+    end
   
     depends_on "pkg-config" => :build
     depends_on "libplist"
